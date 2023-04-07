@@ -1,38 +1,25 @@
 import React from "react";
+import {Trash} from "react-bootstrap-icons";
 
-const ContactList = () => {
+const ContactList = (props) => {
+    console.log(props);
+
+    const renderContactList = props.contacts.map((contact) => {
+        return (  
+            <div className="d-flex align-items-center justify-content-between p-3 border rounded">
+                <div>
+                    <h5 key={contact.name} className="mb-1">{contact.name}</h5>
+                    <small key={contact.email} className="text-muted">{contact.email}</small>
+                </div>  
+                <a href="https://www.google.com" color="black" rel="noreferrer noopener"><Trash/></a>
+            </div>
+        );
+    })
+
     return (
-      <div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td colspan="2">Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div>
+            {renderContactList}
+        </div>
     );
 }
 
