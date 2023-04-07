@@ -6,10 +6,10 @@ import ContactList from "./ContactList";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <AddContact />
-      {/* <ContactList /> */}
+      <ContactList />
     </div>
   );
 }
