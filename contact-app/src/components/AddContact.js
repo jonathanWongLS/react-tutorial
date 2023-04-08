@@ -12,7 +12,7 @@ class AddContact extends React.Component {
             alert("All the fields are mandatory!");
             return;
         }
-
+        this.props.addContactHandler(this.state); // Adds the props from App.js (addcontactHandler)
         console.log(this.state);
     }
     
